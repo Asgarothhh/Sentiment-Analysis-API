@@ -10,17 +10,11 @@ with open(config_path, 'r') as file:
 
 
 class SentimentPrediction(BaseModel):
-    """Class representing a sentiment prediction result."""
     label: str
     score: float
 
 
 def load_model():
-    """Load a pre-trained sentiment analysis model.
-
-    Returns:
-        model (function): A function that takes a text input and returns a SentimentPrediction object.
-    """
     model_hf = pipeline(config['task'], model=config['model'], device=-1)
 
     def model(text: str) -> SentimentPrediction:
