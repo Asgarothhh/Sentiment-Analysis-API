@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 Запустите сервер:
 ```
-uvicorn app.app:app --host 127.0.0.1 --port 8000
+uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 **Способ 2. Через Docker**
 
@@ -35,6 +35,27 @@ docker run -d -p 8000:80 asgarothhh/sentiment-app:latest
 * POST /predict — анализ тональности текста.
 * Вход: JSON с ключом text.
 * Выход: метка (positive, negative, neutral) и вероятность.
+
+## 🧪 Результаты тестирования
+
+Запуск тестирования:
+```
+python -m pytest -q
+```
+Результаты проверки меток: 
+```
+....F...F....F.                                                                                       [100%]
+================================================================ FAILURES ================================================================
+FAILED tests/test_ml.py::test_sentiment[Фильм был скучным и затянутым-negative] - AssertionError: assert 'neutral' == 'negative'
+FAILED tests/test_ml.py::test_sentiment[Результаты превзошли все ожидания-positive] - AssertionError: assert 'neutral' == 'positive'
+FAILED tests/test_ml.py::test_sentiment[Обслуживание хорошее, но цены высокие-neutral] - AssertionError: assert 'positive' == 'neutral'
+3 failed, 12 passed in 36.41s
+```
+
+Результаты smoke‑тестов:
+```
+7 passed in 32.91s
+```
 
 ## 🛠️ Технологии
 
