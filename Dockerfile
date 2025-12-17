@@ -3,8 +3,8 @@ FROM python:3.12-slim
 WORKDIR /workdir
 
 COPY requirements.txt requirements-dev.txt setup.py ./
-COPY app/ ./app/
-COPY ml/ ./ml/
+COPY app/ /workdir/app/
+COPY ml/ /workdir/ml/
 
 RUN pip install -U -e .
 
