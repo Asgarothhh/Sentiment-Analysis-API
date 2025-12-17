@@ -10,4 +10,4 @@ WORKDIR /workdir
 
 RUN pip install -U -e .
 
-CMD ["sh", "-c", "redis-server --daemonize yes && uvicorn app.app:app --host 127.0.0.1 --port 80"]
+CMD ["sh", "-c", "redis-server --daemonize yes && uvicorn app.app:app --host 127.0.0.1 --port 8080"]
