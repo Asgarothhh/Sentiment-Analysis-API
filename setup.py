@@ -21,6 +21,7 @@ setup(
     python_requires=">=3.10",
     packages=find_packages(include=["app", "ml", "app.*", "ml.*"], exclude=["tests"]),
     install_requires=requirements("requirements.txt"),
+    extras_require={"dev": requirements("requirements-dev.txt")},
     classifiers=[
         "Programming Language :: Python :: 3",
         "Framework :: FastAPI",

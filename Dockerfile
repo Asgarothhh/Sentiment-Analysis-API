@@ -2,7 +2,7 @@ FROM python:3.12
 
 RUN apt-get update && apt-get install -y redis-server && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt setup.py /workdir/
+COPY requirements.txt requirements-dev.txt setup.py /workdir/
 COPY app/ /workdir/app/
 COPY ml/ /workdir/ml/
 
