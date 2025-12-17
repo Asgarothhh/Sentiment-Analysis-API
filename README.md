@@ -50,9 +50,9 @@ docker pull asgarothhh/sentiment-api:latest
 ```
 Запустите контейнер:
 ```
-docker run -d -p 8080:8080 asgarothhh/sentiment-app:latest
+docker run -d -p 8080:8080 asgarothhh/sentiment-api:latest
 ```
-После можете открыть браузер и ввести: ```http://localhost:8080```
+После можете открыть браузер и ввести: ```http://127.0.0.1:8080``
 
 ## 📌 Эндпоинты
 
