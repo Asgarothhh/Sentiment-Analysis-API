@@ -46,7 +46,7 @@ docker run -d -p 6379:6379 redis:latest
 
 Скачайте образ:
 ```
-docker pull asgarothhh/sentiment-app:latest
+docker pull asgarothhh/sentiment-api:latest
 ```
 Запустите контейнер:
 ```
