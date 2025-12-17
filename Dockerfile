@@ -8,4 +8,4 @@ COPY ml/ /workdir/ml/
 
 RUN pip install -U -e .
 
-CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]

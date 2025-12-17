@@ -52,6 +52,8 @@ docker pull asgarothhh/sentiment-app:latest
 ```
 docker run -d -p 8080:8080 asgarothhh/sentiment-app:latest
 ```
+После можете открыть браузер и ввести: ```http://localhost:8080```
+
 ## 📌 Эндпоинты
 
 * POST /predict — анализ тональности текста.
