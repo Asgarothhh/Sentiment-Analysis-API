@@ -20,6 +20,28 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
+#### ⚡ Настройка Redis для локального запуска
+
+Для работы кэширования в API требуется запущенный сервер **Redis**.  
+При запуске через `uvicorn` Redis нужно установить и запустить отдельно.
+
+##### 1. Установка Redis
+
+- **Linux (Ubuntu/Debian):**
+```
+sudo apt-get update
+sudo apt-get install redis-server
+sudo service redis-server start
+```
+- **macOS (через Homebrew):**
+```
+brew install redis 
+brew services start redis
+```
+- **Windows (на Windows проще всего использовать Docker):**
+```
+docker run -d -p 6379:6379 redis:latest
+```
 **Способ 2. Через Docker**
 
 Скачайте образ:
