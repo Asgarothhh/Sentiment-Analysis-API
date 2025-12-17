@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from requests.exceptions import Timeout, RequestException
 
 from ml.model import load_model
+from .redis_client import redis_client
 from .utils import make_key
 
 logging.basicConfig(level=logging.INFO,
@@ -17,8 +18,6 @@ logging.basicConfig(level=logging.INFO,
 
 app = FastAPI(title="Sentiment Analysis API", description="Определение тональности текста")
 model = None
-
-redis_client = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
 
 
 class SentimentRequest(BaseModel):
