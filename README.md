@@ -50,7 +50,7 @@ docker pull asgarothhh/sentiment-app:latest
 ```
 Запустите контейнер:
 ```
-docker run -d -p 8000:80 asgarothhh/sentiment-app:latest
+docker run -d -p 8080:8080 asgarothhh/sentiment-app:latest
 ```
 ## 📌 Эндпоинты
 
