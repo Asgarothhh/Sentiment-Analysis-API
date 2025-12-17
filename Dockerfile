@@ -1,13 +1,11 @@
-FROM python:3.12
-
-RUN apt-get update && apt-get install -y redis-server && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt requirements-dev.txt setup.py /workdir/
-COPY app/ /workdir/app/
-COPY ml/ /workdir/ml/
+FROM python:3.12-slim
 
 WORKDIR /workdir
 
+COPY requirements.txt requirements-dev.txt setup.py ./
+COPY app/ ./app/
+COPY ml/ ./ml/
+
 RUN pip install -U -e .
 
-CMD ["sh", "-c", "redis-server --daemonize yes && uvicorn app.app:app --host 127.0.0.1 --port 8080"]
+CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8080"]
